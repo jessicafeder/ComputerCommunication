@@ -1,24 +1,22 @@
-/*
 package Lab2;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Timer;
 import java.util.TimerTask;
 
-class TempGenerator {
+class SensorDataTopicTest {
+    Timer timer;
+    int seconds = 10;
     String topic = "sensor/KYH/JF";
-    String content = "temp " + (int) (Math.random() * 10 +15) ;
+    String content = "hej" + (int) (Math.random() * 10 +15) ;
     int qos = 2;
     String broker = "tcp://broker.hivemq.com:1883";
     String clientId = "JavaSample";
-    int secondsTimer = 60;
-    long delay = secondsTimer * 1000L;
     MemoryPersistence persistence = new MemoryPersistence();
-    Timer timer;
 
-    TempGenerator() {
+    SensorDataTopicTest() {
+
 
         try {
             MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
@@ -34,7 +32,8 @@ class TempGenerator {
             System.out.println("Message published");
             sampleClient.subscribe(topic, new MqttPostPropertyMessageListener());
             timer = new Timer();
-            timer.schedule(new TimerDo(), delay);
+            timer.schedule(new RemindTask(), seconds*1000L);
+
 
         } catch (MqttException me) {
             System.out.println("reason " + me.getReasonCode());
@@ -53,32 +52,18 @@ class TempGenerator {
         }
     }
 
-    class TimerDo extends TimerTask {
+
+
+    class RemindTask extends TimerTask { // vill få denna koden att loopa så den printar ut temperatur var 60 sekund
         public void run() {
-            try {
-                String temp = getStringDegree() + "°C";
-                MqttMessage message = new MqttMessage(temp.getBytes(StandardCharsets.UTF_8));
-                message.setQos(2);
-                MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
-                sampleClient.publish(topic, message);
-                System.out.println("Sent temperature: " + temp);
-            } catch (MqttException e) {
-                e.printStackTrace();
-            }
+            System.out.println("Time's up!");
             timer.cancel();
-            timer = new Timer();
-            timer.schedule(new TimerDo(), delay);
-            System.out.println("Created new timer");
         }
     }
 
-    String getStringDegree() {
-        int degree = (int) (Math.random() * 10) + 15;
-        return String.valueOf(degree);
-    }
-
     public static void main(String[] args) {
-        new TempGenerator();
+        System.out.println("Task scheduled.");
+        new SensorDataTopicTest();
     }
 }
-*/
+
