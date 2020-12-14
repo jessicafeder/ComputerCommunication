@@ -2,20 +2,22 @@ package Lab2;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
-import java.util.Scanner;
+import java.nio.charset.StandardCharsets;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class TempGenerator {
+class TempGenerator {
+    String topic = "sensor/KYH/JF";
+    String content = "temp " + (int) (Math.random() * 10 +15) ;
+    int qos = 2;
+    String broker = "tcp://broker.hivemq.com:1883";
+    String clientId = "JavaSample";
+    int secondsTimer = 60;
+    long delay = secondsTimer * 1000L;
+    MemoryPersistence persistence = new MemoryPersistence();
+    Timer timer;
 
     TempGenerator() {
-        Scanner sc = new Scanner(System.in);
-        String topic = "sensor/KYH/EG";
-        String content = "hej" + (int) (Math.random() * 10 +15) ;
-        int qos = 2;
-        String broker = "tcp://broker.hivemq.com:1883";
-        String clientId = "JavaSample";
-        MemoryPersistence persistence = new MemoryPersistence();
 
         try {
             MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
@@ -30,6 +32,8 @@ public class TempGenerator {
             sampleClient.publish(topic, message);
             System.out.println("Message published");
             sampleClient.subscribe(topic, new MqttPostPropertyMessageListener());
+            timer = new Timer();
+            timer.schedule(new TimerDo(), delay);
 
         } catch (MqttException me) {
             System.out.println("reason " + me.getReasonCode());
@@ -48,26 +52,31 @@ public class TempGenerator {
         }
     }
 
-    Timer timer;
-
-    TempGenerator(int seconds) {
-        timer = new Timer();
-        timer.schedule(new RemindTask(), seconds*1000);
-    }
-
-    class RemindTask extends TimerTask {
+    class TimerDo extends TimerTask {
         public void run() {
-            System.out.println("Time's up!");
-            timer.cancel(); //Terminate the timer thread
-            new TempGenerator();
-            new TempGenerator(1);
+            try {
+                String temp = getStringDegree() + "°C";
+                MqttMessage message = new MqttMessage(temp.getBytes(StandardCharsets.UTF_8));
+                message.setQos(2);
+                MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
+                sampleClient.publish(topic, message);
+                System.out.println("Sent temperature: " + temp);
+            } catch (MqttException e) {
+                e.printStackTrace();
+            }
+            timer.cancel();
+            timer = new Timer();
+            timer.schedule(new TimerDo(), delay);
+            System.out.println("Created new timer");
         }
     }
 
+    String getStringDegree() {
+        int degree = (int) (Math.random() * 10) + 15;
+        return String.valueOf(degree);
+    }
+
     public static void main(String[] args) {
-        new TempGenerator(1);
-        System.out.println("Task scheduled.");
         new TempGenerator();
     }
 }
-
