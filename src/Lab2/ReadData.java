@@ -27,7 +27,7 @@ public class ReadData {
     class MqttPostPropertyMessageListener implements IMqttMessageListener {
         @Override
         public void messageArrived(String topic, MqttMessage content) {
-            String receivedContent = topic + ", " + content.toString();
+            String receivedContent = topic + ": " + content.toString();
             System.out.println(receivedContent);
         }
     }

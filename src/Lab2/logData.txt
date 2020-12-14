@@ -1,3 +1,0 @@
-Mon Dec 14 15:20:17 CET 2020, temperature, hej20
-Mon Dec 14 15:57:04 CET 2020, temperature, temp
-

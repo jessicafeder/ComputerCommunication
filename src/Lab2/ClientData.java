@@ -13,7 +13,7 @@ public class ClientData {
     String writeTopic = "sensor/KYH/JF/DATA";
     String mqttBroker = "tcp://broker.hivemq.com:1883";
     String clientId = "JavaSample3";
-    MqttClient mqttClient; //Client
+    MqttClient mqttClient;
 
     ClientData() {
         try {

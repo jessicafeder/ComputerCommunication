@@ -1,25 +1,29 @@
-/*
 package Lab2;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
-import java.nio.charset.StandardCharsets;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
-class TempGenerator {
+
+class TemperatureSensor {
+    Timer timer;
+    int seconds = 10;
+    DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss");
+    LocalDateTime now = LocalDateTime.now();
     String topic = "sensor/KYH/JF";
-    String content = "temp " + (int) (Math.random() * 10 +15) ;
+    String content = date.format(now) + ": " + "Temperature: " + (int) (Math.random() * 10 +15) + "°C";
     int qos = 2;
     String broker = "tcp://broker.hivemq.com:1883";
     String clientId = "JavaSample";
-    int secondsTimer = 60;
-    long delay = secondsTimer * 1000L;
     MemoryPersistence persistence = new MemoryPersistence();
-    Timer timer;
 
-    TempGenerator() {
-
+    TemperatureSensor() {
         try {
             MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
             MqttConnectOptions connOpts = new MqttConnectOptions();
@@ -34,14 +38,11 @@ class TempGenerator {
             System.out.println("Message published");
             sampleClient.subscribe(topic, new MqttPostPropertyMessageListener());
             timer = new Timer();
-            timer.schedule(new TimerDo(), delay);
+            timer.schedule(new RemindTask(), seconds*1000L);
+
+
 
         } catch (MqttException me) {
-            System.out.println("reason " + me.getReasonCode());
-            System.out.println("msg " + me.getMessage());
-            System.out.println("loc " + me.getLocalizedMessage());
-            System.out.println("cause " + me.getCause());
-            System.out.println("excep " + me);
             me.printStackTrace();
         }
     }
@@ -53,32 +54,19 @@ class TempGenerator {
         }
     }
 
-    class TimerDo extends TimerTask {
-        public void run() {
-            try {
-                String temp = getStringDegree() + "°C";
-                MqttMessage message = new MqttMessage(temp.getBytes(StandardCharsets.UTF_8));
-                message.setQos(2);
-                MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
-                sampleClient.publish(topic, message);
-                System.out.println("Sent temperature: " + temp);
-            } catch (MqttException e) {
-                e.printStackTrace();
-            }
-            timer.cancel();
-            timer = new Timer();
-            timer.schedule(new TimerDo(), delay);
-            System.out.println("Created new timer");
-        }
-    }
 
-    String getStringDegree() {
-        int degree = (int) (Math.random() * 10) + 15;
-        return String.valueOf(degree);
-    }
+    class RemindTask extends TimerTask {
+        @Override
+        public void run() {
+            System.out.println("Printing new temperature every 60 seconds...");
+            timer.cancel();
+            new TemperatureSensor();
+            }
+        }
 
     public static void main(String[] args) {
-        new TempGenerator();
+        new TemperatureSensor();
+
     }
 }
-*/
+
