@@ -2,9 +2,7 @@ package Lab2;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.time.format.DateTimeFormatter;
@@ -20,7 +18,7 @@ class TemperatureSensor {
     String content = date.format(now) + ": " + "Temperature: " + (int) (Math.random() * 10 +15) + "°C";
     int qos = 2;
     String broker = "tcp://broker.hivemq.com:1883";
-    String clientId = "JavaSample";
+    String clientId = "sensor";
     MemoryPersistence persistence = new MemoryPersistence();
 
     TemperatureSensor() {
@@ -49,11 +47,10 @@ class TemperatureSensor {
 
     class MqttPostPropertyMessageListener implements IMqttMessageListener {
         @Override
-        public void messageArrived(String var1, MqttMessage var2) throws Exception {
+        public void messageArrived(String var1, MqttMessage var2){
             System.out.println(var1 + ": " + var2.toString());
         }
     }
-
 
     class RemindTask extends TimerTask {
         @Override
