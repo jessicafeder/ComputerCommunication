@@ -40,13 +40,31 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jessi\Documents\ComputerCommunication\src\Lab2\LogFiles" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.TemperatureSensor">
+    <configuration name="CheckData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lab2.CheckData.CheckData" />
+      <module name="ComputerCommunication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lab2.CheckData.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ClientData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Lab2.ClientData" />
       <module name="ComputerCommunication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Lab2.*" />
+          <option name="PATTERN" value="Lab2.CheckData.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -55,11 +73,11 @@
       </method>
     </configuration>
     <configuration name="LogData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lab2.LogData" />
+      <option name="MAIN_CLASS_NAME" value="Lab2.LogData.LogData" />
       <module name="ComputerCommunication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Lab2.*" />
+          <option name="PATTERN" value="Lab2.CheckData.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -72,20 +90,7 @@
       <module name="ComputerCommunication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Lab2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SubPublishTopic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lab2.SubPublishTopic" />
-      <module name="ComputerCommunication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Lab2.*" />
+          <option name="PATTERN" value="Lab2.CheckData.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,11 +99,11 @@
       </method>
     </configuration>
     <configuration name="TemperatureSensor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lab2.TemperatureSensor" />
+      <option name="MAIN_CLASS_NAME" value="Lab2.TemperatureSensor.TemperatureSensor" />
       <module name="ComputerCommunication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Lab2.*" />
+          <option name="PATTERN" value="Lab2.CheckData.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,13 +111,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,8 +128,8 @@
       <list>
         <item itemvalue="Application.TemperatureSensor" />
         <item itemvalue="Application.LogData" />
+        <item itemvalue="Application.CheckData" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.SubPublishTopic" />
         <item itemvalue="Application.ClientData" />
       </list>
     </recent_temporary>
@@ -136,6 +143,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607699221870</updated>
       <workItem from="1607699222935" duration="11957000" />
+      <workItem from="1608121390102" duration="5848000" />
     </task>
     <servers />
   </component>
@@ -151,38 +159,38 @@
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
     <state x="3645" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1607961306558" />
-    <state width="1234" height="282" key="GridCell.Tab.0.bottom" timestamp="1608042512603">
+    <state width="1234" height="323" key="GridCell.Tab.0.bottom" timestamp="1608127910814">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608042512603" />
-    <state width="1234" height="282" key="GridCell.Tab.0.center" timestamp="1608042512603">
+    <state width="1234" height="323" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608127910814" />
+    <state width="1234" height="323" key="GridCell.Tab.0.center" timestamp="1608127910814">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="282" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608042512603" />
-    <state width="1234" height="282" key="GridCell.Tab.0.left" timestamp="1608042512602">
+    <state width="1234" height="323" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608127910814" />
+    <state width="1234" height="323" key="GridCell.Tab.0.left" timestamp="1608127910814">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="282" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608042512602" />
-    <state width="1234" height="282" key="GridCell.Tab.0.right" timestamp="1608042512603">
+    <state width="1234" height="323" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608127910814" />
+    <state width="1234" height="323" key="GridCell.Tab.0.right" timestamp="1608127910814">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="282" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608042512603" />
-    <state width="1234" height="347" key="GridCell.Tab.1.bottom" timestamp="1607954374254">
+    <state width="1234" height="323" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608127910814" />
+    <state width="1234" height="347" key="GridCell.Tab.1.bottom" timestamp="1608062417695">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="347" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1607954374254" />
-    <state width="1234" height="347" key="GridCell.Tab.1.center" timestamp="1607954374254">
+    <state width="1234" height="347" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608062417695" />
+    <state width="1234" height="347" key="GridCell.Tab.1.center" timestamp="1608062417695">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="347" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1607954374254" />
-    <state width="1234" height="347" key="GridCell.Tab.1.left" timestamp="1607954374254">
+    <state width="1234" height="347" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608062417695" />
+    <state width="1234" height="347" key="GridCell.Tab.1.left" timestamp="1608062417695">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="347" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1607954374254" />
-    <state width="1234" height="347" key="GridCell.Tab.1.right" timestamp="1607954374254">
+    <state width="1234" height="347" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608062417695" />
+    <state width="1234" height="347" key="GridCell.Tab.1.right" timestamp="1608062417695">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="347" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1607954374254" />
+    <state width="1234" height="347" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608062417695" />
     <state x="2680" y="165" width="1040" height="780" key="SettingsEditor" timestamp="1607699343927">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
