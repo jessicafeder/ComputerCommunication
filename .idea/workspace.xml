@@ -39,6 +39,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -143,7 +144,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607699221870</updated>
       <workItem from="1607699222935" duration="11957000" />
-      <workItem from="1608121390102" duration="5848000" />
+      <workItem from="1608121390102" duration="6985000" />
     </task>
     <servers />
   </component>
@@ -191,10 +192,10 @@
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
     <state width="1234" height="347" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608062417695" />
-    <state x="2680" y="165" width="1040" height="780" key="SettingsEditor" timestamp="1607699343927">
+    <state x="2680" y="165" width="1040" height="780" key="SettingsEditor" timestamp="1608130757985">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state x="2680" y="165" width="1040" height="780" key="SettingsEditor/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1607699343927" />
+    <state x="2680" y="165" width="1040" height="780" key="SettingsEditor/0.0.1536.824/1920.0.2560.1040@1920.0.2560.1040" timestamp="1608130757985" />
     <state x="2904" y="447" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607699336882">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>

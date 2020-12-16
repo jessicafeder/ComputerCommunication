@@ -21,10 +21,10 @@ public class LogData {
         MemoryPersistence persistence = new MemoryPersistence();
         try {
             mqttClient = new MqttClient(broker, client, persistence);
-            MqttConnectOptions connection = new MqttConnectOptions();
-            connection.setCleanSession(true);
+            MqttConnectOptions connOpts = new MqttConnectOptions();
+            connOpts.setCleanSession(true);
             System.out.println("Connecting to broker: " + broker);
-            mqttClient.connect(connection);
+            mqttClient.connect(connOpts);
             System.out.println("Connected and subscribing to: " + topicOne + " and " + topicTwo);
             mqttClient.subscribe(topicOne, new MqttPostPropertyMessageListener());
             mqttClient.subscribe(topicTwo, new MqttPostPropertyMessageListener());

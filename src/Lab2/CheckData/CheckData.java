@@ -15,10 +15,10 @@ public class CheckData {
         try {
             MemoryPersistence persistence = new MemoryPersistence();
             mqttClient = new MqttClient(broker, client, persistence);
-            MqttConnectOptions connection = new MqttConnectOptions();
-            connection.setCleanSession(true);
+            MqttConnectOptions connOpts = new MqttConnectOptions();
+            connOpts.setCleanSession(true);
             System.out.println("Connecting to broker: " + broker);
-            mqttClient.connect(connection);
+            mqttClient.connect(connOpts);
             System.out.println("Connected to topic: " + topicOne);
             mqttClient.subscribe(topicOne, new MqttPostPropertyMessageListener());
 
