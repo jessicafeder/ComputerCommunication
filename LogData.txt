@@ -1,1 +1,0 @@
-2020.12.15 15:27:55: Temperature: 15°C - sensor/KYH/JF - 2020.12.15 15:28:05: Temperature: 23°C2020.12.15 15:27:55: Temperature: 15°C - sensor/KYH/JF - 2020.12.15 15:28:15: Temperature: 17°C
